@@ -7,10 +7,6 @@ header("Access-Control-Allow-Methods: GET,PUT,POST,DELETE");
 
 require_once('../Function/CRUD.php');
 
-// if (isset($_POST['function'], $_POST['content'])) {
-//     echo Rest::open($_POST['function'], $_POST['content']);
-// }
-
 class Rest {
     // Executa a Classe e Função recebida por URL e envia os parâmetros por GET ou POST
     public static function open($request) {
