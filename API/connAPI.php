@@ -34,10 +34,10 @@ class Rest {
 
                     return json_encode(array('status' => 'success', 'data' => $return));
                 } else {
-                    return json_encode(array('status' => 'erro', 'data' => 'Método inexistente!'));
+                    return json_encode(array('status' => 'error', 'data' => 'Método inexistente!'));
                 }
             } else {
-                return json_encode(array('status' => 'erro', 'data' => 'Classe inexistente!'));
+                return json_encode(array('status' => 'error', 'data' => 'Classe inexistente!'));
             }
         } catch (Exception $e) {	
             // Retorna o erro caso exista
@@ -45,15 +45,14 @@ class Rest {
             $errorFile 		= $e->getFile();
             $errorLine 		= $e->getLine();
 
-            echo json_encode(array('status' => 'erro', 'data' => $errorMessage, $errorFile, $errorLine));
+            echo json_encode(array('status' => 'error', 'data' => $errorMessage, $errorFile, $errorLine));
         }
         
     }
 }
-// if (isset($_POST['function'], $_POST['content'])) {
+
     if (isset($_REQUEST)) {
 		echo Rest::open($_REQUEST);
 	}
-// }
 
 
